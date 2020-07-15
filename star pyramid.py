@@ -18,4 +18,17 @@ i=10
 while i>0:
     print("*"*i)
     i=i-1
+print("-"*15,"vycentrovana","-"*15)
+i=1
+odskok=0
+while i<10:
+    print(" "*(4-odskok),"*"*i)
+    i=i+2
+    odskok=odskok+1
+i=9
+odskok=0
+while i>0:
+    print(" "*(0+odskok),"*"*i)
+    i=i-2
+    odskok=odskok+1
 print("Koniec")
