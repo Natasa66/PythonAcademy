@@ -4,12 +4,7 @@ def spocitaj(cislo1, cislo2) :
     :param cislo2:  int
     :return:  int
     """
-    # if isinstance(cislo1, str) and isinstance(cislo2, str):
-    #     return False
-    # if isinstance(cislo1, int) and isinstance(cislo2, str):
-    #     return False
-    # if isinstance(cislo1, str) and isinstance(cislo2, int):
-    #     return False
+
     if isinstance(cislo1,int) and isinstance(cislo2,int):
         return int(cislo1 + cislo2)
     else:
