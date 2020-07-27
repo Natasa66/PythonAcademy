@@ -1,17 +1,17 @@
 #vytvorte funkciu, ktorej vstupom bude pocet hviezdiciek zakladne a vykreslite
 #pomocou nej obratenu pyramidu
 
-def obratena_pyramida(num_stars):
-    """vykreslenie obratenej pyramidy
-
-    :param num_stars: int - pocet hviezdiciek v prvom riadku
-    :return: none
-    """
-    if num_stars:
-        for i in range(num_stars, 0, -1):
-            print(f"{'*'*i}")
-    else:
-        print("nezadali ste pocet hviezdiciek")
+# def obratena_pyramida(num_stars):
+#     """vykreslenie obratenej pyramidy
+#
+#     :param num_stars: int - pocet hviezdiciek v prvom riadku
+#     :return: none
+#     """
+#     if num_stars:
+#         for i in range(num_stars, 0, -1):
+#             print(f"{'*'*i}")
+#     else:
+#         print("nezadali ste pocet hviezdiciek")
 
 # ideme ju zavolat
 # teraz je to znefunkcnene, lebo vytvorim vseobecnejsiu funkciu na pyramidu
@@ -28,7 +28,7 @@ def pyramida(zakladna, orientacia, centrovanie):
     :return: None
     
     """
-    if orientacia != ["normalna", 'obratena']:
+    if orientacia not in ["normalna", 'obratena']:
         print("Pyramida moze byt iba [normalna] alebo [obratena]")
         return False
         # raise NotImplementedError("Pyramida moze byt iba [normalna] alebo [obratena]")
