@@ -23,7 +23,7 @@ class TestSpocitaj(TestCase):
         result = spocitaj("ahoj, ", 5)
         self.assertFalse(result)
 
-    def test_spocitaj_int_str(self):  # ani cislo a string nema byt spocitane
+    def test_spocitaj_int_str(self):  # ani opacne nema byt spocitane
         result = spocitaj(12, "bus")
         self.assertFalse(result)
 
