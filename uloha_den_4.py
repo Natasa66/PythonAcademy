@@ -16,6 +16,13 @@ def zacina_samohlaskou(meno):
         return True
     else:
         return False
+# mozno len troska prekopanie na 
+# menej kodu, jednoduhsie na citanie, len 2x return
+#     if isinstance(meno,str):
+#        samohlasky = ("A", "e", "i", "o", "u", "a", "E", "I", "O", "U")
+#        if meno[0] in samohlasky:
+#            return True
+#    return False
 
 # Lekcia3/DU/pyramida.py
 # 	-> upravte pyramidu tak, aby vystupom z funkcie bol zoznam (list)
