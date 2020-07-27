@@ -45,5 +45,4 @@ if __name__ == "__main__":
     maximalna_hodnota = int(input("Zadaj maximalnu hodnotu prvkov: "))
 
     matrix = vygeneruj_maticu(pocet_riadkov, pocet_stlpcov, minimalna_hodnota, maximalna_hodnota)
- #   print(matrix)  #tu treba dat printovanie matice - vytvorit funkciu
     vytlac_maticu(matrix,pocet_riadkov,pocet_stlpcov)
