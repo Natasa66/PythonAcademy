@@ -24,18 +24,14 @@ def vygeneruj_maticu(num_rows, num_columns, min_value, max_value):
 
 def vytlac_maticu(p_matica, p_riadkov, p_stlpcov)  :
     """
-       vytlaci maticu p_riadkov x  p_stlpcov
+       vytlaci maticu p_riadkov x  p_stlpcov   ako zoznam
     :param p_matica:     list
     :param p_riadkov:     int
     :param p_stlpcov:     int
     :return:
     """
     for i in range(p_riadkov):
-        # for j in range(p_stlpcov):
-        #    print(p_matica[i][j],end=' ')
-        # print("\n")
         print(p_matica[i])
-
 
 
 if __name__ == "__main__":
