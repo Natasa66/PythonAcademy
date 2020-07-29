@@ -11,3 +11,10 @@ if rok_int% 4==0:
          print("rok je prestupny")
 else:
     print(f"Rok {rok_int} nie je priestupny")
+#
+#pridame rozsah rokov
+rok_od = int(input("Zadaj rok od: "))
+rok_do = int(input("Zadaj rok do: "))
+for rok in range(rok_od, rok_do+1):
+    if ((rok%4 == 0) and (rok % 100 != 0)) or rok %400 == 0:
+        print(f"Rok {rok} je prestupny")
