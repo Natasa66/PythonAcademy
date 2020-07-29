@@ -13,14 +13,16 @@ def vygeneruj_maticu(num_rows, num_columns, min_value, max_value):
     """
     matica = []  # hlavny zoznam - matica - bude to zoznam riadkov matice
     # do tohoto zoznamu budem davat dalsie zoznamy - riadky matice
-    for i in range(num_rows):
-        riadok_data = []  #prazdny zoznam, do ktoreho napraskam cisla toho riadku
-        # pocet prvkov v riadku je pocet stlpcov!!!!!
-        for y in range(num_columns):
-            prvok = random.randint(min_value, max_value+1)
-            riadok_data.append(prvok) #pridam do riadku dalsie cislo
-        matica.append(riadok_data)
-    return matica
+    if isinstance(num_rows,int) and isinstance(num_columns,int) and isinstance(min_value,int) and isinstance(max_value,int):
+        for i in range(num_rows):
+            riadok_data = []  #prazdny zoznam, do ktoreho napraskam cisla toho riadku
+            # pocet prvkov v riadku je pocet stlpcov!!!!!
+            for y in range(num_columns):
+                prvok = random.randint(min_value, max_value+1)
+                riadok_data.append(prvok)            #pridam do riadku dalsie cislo
+            matica.append(riadok_data)
+        return matica
+    return False
 
 def vytlac_maticu(p_matica, p_riadkov, p_stlpcov)  :
     """

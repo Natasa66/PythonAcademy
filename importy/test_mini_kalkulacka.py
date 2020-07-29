@@ -31,3 +31,7 @@ class TestSpocitaj(TestCase):
         result = spocitaj(3, 5)
         self.assertIsInstance(result,int)
 
+    def test_spocitaj_list_list(self):  # ani opacne nema byt spocitane
+        result = spocitaj([12], [8])
+        self.assertFalse(result)
+
