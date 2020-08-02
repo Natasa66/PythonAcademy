@@ -9,7 +9,11 @@ def zasifruj_Cezar(retazec:str, posun=0):
     :return: vystypny_retazec
     """
     # skontroluj posun - ak je viac ako 26, tak ho zmensi o nasobky 26
-    posun = posun % 26
+    if posun>=0:
+        posun = posun % 26
+    else:
+        return False
+
     #inicializacia vystupneho retazca
     vystupny_retazec=""
     # prejdi retazec a posuvaj pismena
@@ -38,10 +42,13 @@ def rozsifruj_Cezar(retazec:str, posunr=0):
     :return: vystupny_retazec
     """
     # skontroluj posun - ak je viac ako 26, tak ho zmensi o nasobky 26
-    posunr = posunr % 26
+    if posunr >=0:
+        posunr = posunr % 26
+    else:
+        return False
     # inicializacia vystupneho retazca
     vystupny_retazec = ""
-    # prejdi retazec a posuvaj pismena
+    # prejdpi retazec a posuvaj pismena
     for i in range(0, len(retazec)):
         znak = retazec[i]
         skutocny_posun = 0
@@ -64,7 +71,7 @@ def brutal_force_Cezar(retazec:str):
     :param retazec: retazec, ktory treba rozkodovat
     :return: vsetky mozne povodne retazce
     """
-    for i in range(1,26):
+    for i in range(1,27):
         rozsifrovany_retazec=""
         rozsifrovany_retazec = rozsifruj_Cezar(sifrovany_retazec, i)
         print(f"{i} : {rozsifrovany_retazec}")
@@ -73,12 +80,15 @@ if __name__ == "__main__":
     vstupny_retazec = str(input("zadaj retazec : "))
     #vstupny_retazec = "BotaS"
     posun = int(input("zadaj posun: "))
-    sifrovany_retazec = zasifruj_Cezar(vstupny_retazec,posun)
-    print("-" * 40)
-    print(f"zasifrovany retazec: {sifrovany_retazec}")
-    print("-"*40)
-    rozsifrovany_retazec=rozsifruj_Cezar(sifrovany_retazec,posun)
-    print(f"povodny retazec : {rozsifrovany_retazec}")
-    print("-" * 40)
-    brutal_force_Cezar(sifrovany_retazec)
-    print("koniec filmu")
+    if posun >= 0 and len(vstupny_retazec) > 0:
+        sifrovany_retazec = zasifruj_Cezar(vstupny_retazec, posun)
+        print("-" * 40)
+        print(f"zasifrovany retazec: {sifrovany_retazec}")
+        print("-"*40)
+        rozsifrovany_retazec=rozsifruj_Cezar(sifrovany_retazec,posun)
+        print(f"povodny retazec : {rozsifrovany_retazec}")
+        print("-" * 40)
+        brutal_force_Cezar(sifrovany_retazec)
+        print("koniec filmu")
+    else:
+        print("nespravne hodnoty na vstupe")
