@@ -8,7 +8,7 @@ def zasifruj_Cezar(retazec:str, posun=0):
     :param posun: aky posun ma byt vykonany
     :return: vystypny_retazec
     """
-    # skontroluj posun
+    # skontroluj posun - ak je viac ako 26, tak ho zmensi o nasobky 26
     posun = posun % 26
     #inicializacia vystupneho retazca
     vystupny_retazec=""
@@ -30,15 +30,15 @@ def zasifruj_Cezar(retazec:str, posun=0):
 
     return vystupny_retazec
 
-def rozsifruj_Cezar(retazec:str, posun1=0):
+def rozsifruj_Cezar(retazec:str, posunr=0):
     """
 
     :param retazec: zasifrovany retazec
-    :param posun1:
+    :param posunr:
     :return: vystupny_retazec
     """
-    # skontroluj posun
-    posun1 = posun1 % 26
+    # skontroluj posun - ak je viac ako 26, tak ho zmensi o nasobky 26
+    posunr = posunr % 26
     # inicializacia vystupneho retazca
     vystupny_retazec = ""
     # prejdi retazec a posuvaj pismena
@@ -46,12 +46,12 @@ def rozsifruj_Cezar(retazec:str, posun1=0):
         znak = retazec[i]
         skutocny_posun = 0
         if retazec[i].islower() or retazec[i].isupper():  # ak su to pismena, budem posuvat
-            skutocny_posun = posun1
-            if (ord(znak) - posun1) <97 and znak.islower():
-                skutocny_posun = posun1 - ( ord(znak) - 97) -1 # vypocitam novy posun - od zaciatku abecedy
+            skutocny_posun = posunr
+            if (ord(znak) - posunr) <97 and znak.islower():
+                skutocny_posun = posunr - ( ord(znak) - 97) -1 # vypocitam novy posun - od zaciatku abecedy
                 znak = 'z'
-            elif (ord(znak) - posun1) < 65 and znak.upper():
-                skutocny_posun = posun1 - (ord(znak) - 65) -1
+            elif (ord(znak) - posunr) < 65 and znak.upper():
+                skutocny_posun = posunr - (ord(znak) - 65) -1
                 znak = 'Z'
 
         vystupny_retazec += chr(ord(znak)-skutocny_posun)
