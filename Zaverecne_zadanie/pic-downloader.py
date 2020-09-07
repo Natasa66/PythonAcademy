@@ -55,7 +55,7 @@ def get_all_images(url_l):
     return img
 
 #---------------------------------------------------------------------------------------
-#open the page -
+
 #---------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
@@ -80,7 +80,7 @@ if __name__ == "__main__":
                 open(filename,'wb').write(r.content)
             except ValueError:
                 pass
-
+        print("Koniec")
 
 
 
