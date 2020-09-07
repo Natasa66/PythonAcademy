@@ -1,17 +1,16 @@
 #
 # pip install requests
-# pip install bs4
 #
 #importy
-# from PIL import Image
+
 #
 import requests
 import requests.exceptions
 import re
 import os
-from bs4 import BeautifulSoup
+
 import argparse
-# import urllib.request
+
 #---------------------------------------------------------------------------------------
 # get argument - webpage
 """
