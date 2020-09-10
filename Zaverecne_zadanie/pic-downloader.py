@@ -1,9 +1,21 @@
-#
-# pip install requests
-#
-#importy
+# bez beautifulsoup
+# pekny regex
+# pekny kod
 
-#
+# tie komentare co su nad funkciami, treba davat ako docstringy , tj 3jite ",
+# pripadne '
+
+# def ahoj():
+#    """ tuto je docstring
+#        2 riadok
+#    """
+#    pass
+
+
+# pridal by som tam ten argument parser, a dal default hodnotu minimalne pre
+# cast 'kam ich ulozit'    pictures/  bolo v zadani
+
+# importy
 import requests
 import requests.exceptions
 import re
@@ -76,6 +88,7 @@ if __name__ == "__main__":
                 img_url = image[:pos]
                 imagename = img_url.split('/')[-1]   # get name of image file from url adress
                 filename = os.path.join(pathname, imagename)
+                # tu este mozno  stream=True  < ak by bol obrazok velky
                 r = requests.get(img_url,allow_redirects=True)
                 open(filename,'wb').write(r.content)
             except ValueError:
